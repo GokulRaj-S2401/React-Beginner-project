@@ -1,0 +1,41 @@
+body{
+  background-color: #ecebe6;
+}
+header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  align-items: center;
+}
+header nav ul{
+  display: flex;
+  gap: 40px;
+  text-transform: uppercase;
+  font-family: poppins;
+}
+header nav ul li{
+  list-style-type: none;
+}
+header nav ul li a{
+  text-decoration: none;
+  color: #262626;
+}
+.brand{
+  font-size: 35px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: poppins;
+  letter-spacing: 2px;
+  display: flex;
+  font-weight: bolder;
+  align-items: center;
+  color: #351500;
+}
+.brand span{
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 10px;
+  color: #262626;
+}
