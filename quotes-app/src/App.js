@@ -25,7 +25,7 @@ function App(){
     fetch("https://api.api-ninjas.com/v1/quotes?category="+category,{
       method:'GET',
       headers:{
-        'X-Api-Key':'Mj1D+Ry6JKUmxsnNjK68qA==LyYoL1rjoxyqehcP'
+        'X-Api-Key':'YOUR API KEY'
       },
       contentType:'application/json'
     }).then((res)=>res.json())
