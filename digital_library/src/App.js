@@ -1,7 +1,28 @@
 import SearchBar from './components/SearchBar'
 import './App.css'
+import { useEffect, useState } from 'react'
 
 const App = () =>{
+
+  const [searchTerm,setSearchTerm] = useState("")
+  const [bookList,setBookList] = useState()
+
+  useEffect(()=>{
+      if(searchTerm.length >1){
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
+        .then((res)=>{
+          return res.json()
+        })
+        .then((data)=>{
+          setBookList(data)
+        })
+      }
+  },[searchTerm])
+
+  const update = (arg) =>{
+      setSearchTerm(arg)
+  }
+
   return (
     <div>
       <header>
@@ -17,7 +38,7 @@ const App = () =>{
         </nav>
       </header>
       <div className="container" >
-        <SearchBar />
+        <SearchBar update={update} />
       </div>
     </div>
   )
