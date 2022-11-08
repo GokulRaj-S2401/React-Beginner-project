@@ -1,11 +1,12 @@
 import SearchBar from './components/SearchBar'
+import Card from './components/Card'
 import './App.css'
 import { useEffect, useState } from 'react'
 
 const App = () =>{
 
   const [searchTerm,setSearchTerm] = useState("")
-  const [bookList,setBookList] = useState()
+  const [bookList,setBookList] = useState(null)
 
   useEffect(()=>{
       if(searchTerm.length >1){
@@ -39,6 +40,13 @@ const App = () =>{
       </header>
       <div className="container" >
         <SearchBar update={update} />
+        <div className='bookList' >
+         <h1>
+          {
+           bookList !== null ? bookList.items.map((item,idx)=><Card key={idx} item ={item}/>) : ''
+          }
+         </h1>
+        </div>
       </div>
     </div>
   )
