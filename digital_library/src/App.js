@@ -41,11 +41,11 @@ const App = () =>{
       <div className="container" >
         <SearchBar update={update} />
         <div className='bookList' >
-         <h1>
+        
           {
            bookList !== null ? bookList.items.map((item,idx)=><Card key={idx} item ={item}/>) : ''
           }
-         </h1>
+      
         </div>
       </div>
     </div>
